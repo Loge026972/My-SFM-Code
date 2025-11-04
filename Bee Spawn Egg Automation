@@ -1,0 +1,17 @@
+Name "Bee Spawn Egg Automation"
+
+Every tick do
+    Input fe:: from Cube BOTTOM SIDE
+    Output fe:: to Incubator
+End
+
+Every 20 ticks do
+    Input egg from Interface
+    Output retain 16 to Incubator slots 0
+Forget
+
+    Input from Incubator slots 2
+    Output to Interface
+Forget
+
+End
