@@ -1,0 +1,31 @@
+NAME "Draconic Evolution Automation"
+
+EVERY 1 TICKS DO
+    INPUT fe:: from cube BOTTOM SIDE
+    OUTPUT fe:: to power
+END
+
+every 20 ticks do
+-- Chaotic Core Crafting
+    if chest slots 0 has = 5 "large_chaos_frag" THEN
+        input from chest slots 0
+        output 1 to core slots 0
+        output 1 to each injector
+        forget
+    end
+
+-- Move item to core
+    input from chest slots 0
+    output to core slots 0
+    forget
+
+-- Move item to injectors
+    input from chest slots 1-26
+    output 1 to each injector
+    forget
+
+-- Move core output to ME Provider
+    input from core slots 1
+    output to provider
+    forget
+end
