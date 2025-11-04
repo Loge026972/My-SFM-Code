@@ -1,0 +1,46 @@
+Name "MI Automation"
+
+Every redstone pulse do
+
+    input coal from Interface
+    output to Boilers
+    forget
+
+    input fluid::water from Sink
+    output fluid:: to Boilers
+    forget
+
+end
+
+Every redstone pulse do
+
+    input fluid:: from Boilers
+    output fluid:: to Machines, SteamDrawer BOTTOM SIDE
+
+end
+
+Every tick do
+
+    input fe:: from Cube TOP SIDE
+    output fe:: to ElectricMachines
+
+end
+
+Every redstone pulse do
+
+    input from Controller
+    output to ElectricMachines
+    forget
+
+    input fluid:: from Controller
+    output fluid:: to ElectricMachines
+    forget
+
+    input from ElectricMachines
+    output to Controller
+    forget
+
+    input fluid:: from ElectricMachines
+    output fluid:: to Controller
+
+end
