@@ -1,0 +1,20 @@
+Name "MI Reactor Automation"
+
+Every 20 ticks do
+
+    input from Interface
+    output to Hatch TOP SIDE
+forget
+
+    input fluid:: from Sink
+    output fluid:: to Hatch TOP SIDE
+forget
+
+    input from Hatch TOP SIDE slots 1-2
+    output to Controller
+forget
+
+    input fluid:: from Hatch TOP SIDE slots 1-2
+    output fluid:: to Controller
+
+end
