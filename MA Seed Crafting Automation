@@ -1,0 +1,13 @@
+Name "MA Seed Crafting Automation"
+
+Every 20 ticks do
+    Input except item:mysticalagriculture:*_seed_base from Altar bottom side
+    Output to Provider top side
+Forget
+    Input except item:mysticalagriculture:*_seed_base, *spawn_egg* from Barrel
+    Output item:mystical*:*_essence to Pedestal1
+    Output except item:mystical*:*_essence to Pedestal2
+Forget
+    Input item:mysticalagriculture:*_seed_base, *spawn_egg* from Barrel
+    Output to Altar top side
+End
