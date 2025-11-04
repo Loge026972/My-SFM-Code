@@ -1,0 +1,23 @@
+Name "Bee Resources Automation"
+
+Every tick do
+    Input fe:: from Cube BOTTOM SIDE
+    Output fe:: to Power
+End
+
+Every redstone pulse do
+    Input configurable_honeycomb from Hive
+    Output to Centrifuge
+Forget
+    Input configurable_comb, comb_powdery from Hive
+    Output to Heated
+Forget
+    Input *log, *moss* from Hive
+    Output to Controller
+Forget
+    Input from Centrifuge, Heated slots 2-10
+    Output to Controller
+Forget
+    Input fluid:: from Centrifuge, Heated BOTTOM SIDE
+    Output fluid:: to Controller
+End
