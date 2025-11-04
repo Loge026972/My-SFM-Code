@@ -1,0 +1,34 @@
+Name "Bee Genes Automation"
+
+Every tick do
+    Input fe:: from Cube BOTTOM SIDE
+    Output fe:: to Dispenser_Squish, Breeder, Incubator, Centrifuge
+End
+
+Every 20 ticks do
+    Input chorus_flower from Interface
+    Output retain 16 to each Breeder slots 3
+    Output retain 16 to each Breeder slots 4
+Forget
+    Input glass_bottle from Interface
+    Output retain 10 to Bottler slots 0
+Forget
+    Input honey_treat from Interface
+    Output retain 64 to Incubator slots 1
+Forget
+    Input from Breeder slots 5
+    Output to Incubator
+Forget
+    Input bee_cage from Interface
+    Output to Breeder slots 0
+Forget
+    Input from Incubator slots 2
+    Output to Barrel
+Forget
+    Input gene_bottle, bee_cage from Barrel
+    Output retain 1 gene_bottle to Centrifuge slots 1
+    Output retain 1 bee_cage to Dispenser_Squish
+Forget
+    Input from Centrifuge slots 2-10
+    Output to Indexer
+End
