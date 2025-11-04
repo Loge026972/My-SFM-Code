@@ -1,0 +1,18 @@
+Name "Occultism Automation"
+
+every 20 ticks do
+    input from barrel top side slots 1-20
+    output to bowl top side
+forget
+end
+
+every 40 ticks do
+   input from barrel top side slots 0
+   output to gold top side
+forget
+end
+
+every 20 ticks do
+    input except book_of_binding_bound* from gold top side
+    output to provider top side
+end
